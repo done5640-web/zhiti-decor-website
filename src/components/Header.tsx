@@ -32,7 +32,7 @@ const Header = () => {
 
   return (
     <header
-      className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-md transition-all duration-300 py-3"
+      className="fixed top-0 left-0 right-0 z-50 bg-white shadow-md transition-all duration-300 py-3"
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link
@@ -62,16 +62,6 @@ const Header = () => {
           ))}
         </nav>
 
-        <div className="hidden md:block">
-          <Button
-            variant="accent"
-            size="lg"
-            onClick={() => handleNavigation("/kontakt")}
-          >
-            Na Kontaktoni
-          </Button>
-        </div>
-
         {/* Mobile Menu Button */}
         <button
           className="md:hidden p-2"
@@ -87,7 +77,7 @@ const Header = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden absolute top-full left-0 right-0 bg-background/98 backdrop-blur-lg shadow-elegant-lg transition-all duration-300 ${
+        className={`md:hidden absolute top-full left-0 right-0 bg-white shadow-lg transition-all duration-300 ${
           isMobileMenuOpen
             ? "opacity-100 visible translate-y-0"
             : "opacity-0 invisible -translate-y-4"
@@ -104,14 +94,6 @@ const Header = () => {
               {link.label}
             </Link>
           ))}
-          <Button
-            variant="accent"
-            size="lg"
-            className="mt-4"
-            onClick={() => handleNavigation("/kontakt")}
-          >
-            Na Kontaktoni
-          </Button>
         </nav>
       </div>
     </header>
