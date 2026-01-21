@@ -32,11 +32,7 @@ const Header = () => {
 
   return (
     <header
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
-        isScrolled
-          ? "bg-background/95 backdrop-blur-md shadow-elegant py-2"
-          : "bg-transparent py-3"
-      }`}
+      className="fixed top-0 left-0 right-0 z-50 bg-white/98 backdrop-blur-md shadow-md transition-all duration-300 py-3"
     >
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link
@@ -46,15 +42,9 @@ const Header = () => {
           <img
             src={logo}
             alt="Zhiti Decor Logo"
-            className={`transition-all duration-300 ${
-              isScrolled ? "h-10 w-10" : "h-12 w-12"
-            } object-contain rounded-lg`}
+            className="h-12 w-12 object-contain"
           />
-          <span
-            className={`font-display text-xl sm:text-2xl font-bold tracking-tight transition-colors duration-300 ${
-              isScrolled ? "text-foreground" : "text-primary-foreground"
-            }`}
-          >
+          <span className="font-display text-xl sm:text-2xl font-bold tracking-tight text-foreground">
             Zhiti<span className="text-gradient">Decor</span>
           </span>
         </Link>
@@ -65,11 +55,7 @@ const Header = () => {
             <Link
               key={link.href}
               to={link.href}
-              className={`font-medium text-sm tracking-wide transition-all duration-300 hover:text-accent relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full ${
-                isScrolled
-                  ? "text-foreground/80 hover:text-foreground"
-                  : "text-primary-foreground/80 hover:text-primary-foreground"
-              }`}
+              className="font-medium text-sm tracking-wide transition-all duration-300 text-foreground/80 hover:text-accent relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
             </Link>
@@ -78,7 +64,7 @@ const Header = () => {
 
         <div className="hidden md:block">
           <Button
-            variant={isScrolled ? "accent" : "hero"}
+            variant="accent"
             size="lg"
             onClick={() => handleNavigation("/kontakt")}
           >
@@ -92,17 +78,9 @@ const Header = () => {
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? (
-            <X
-              className={`w-6 h-6 ${
-                isScrolled ? "text-foreground" : "text-primary-foreground"
-              }`}
-            />
+            <X className="w-6 h-6 text-foreground" />
           ) : (
-            <Menu
-              className={`w-6 h-6 ${
-                isScrolled ? "text-foreground" : "text-primary-foreground"
-              }`}
-            />
+            <Menu className="w-6 h-6 text-foreground" />
           )}
         </button>
       </div>

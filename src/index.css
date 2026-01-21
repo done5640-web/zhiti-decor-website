@@ -6,52 +6,52 @@
 
 @layer base {
   :root {
-    /* Warm earth tone palette */
-    --background: 30 20% 98%;
-    --foreground: 25 30% 20%;
+    /* Light neutral palette with subtle warmth */
+    --background: 0 0% 100%;
+    --foreground: 0 0% 15%;
 
-    --card: 30 15% 96%;
-    --card-foreground: 25 30% 20%;
+    --card: 0 0% 98%;
+    --card-foreground: 0 0% 15%;
 
-    --popover: 30 20% 98%;
-    --popover-foreground: 25 30% 20%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 15%;
 
-    /* Rich brown primary */
-    --primary: 25 35% 25%;
-    --primary-foreground: 30 20% 98%;
+    /* Dark gray primary */
+    --primary: 0 0% 20%;
+    --primary-foreground: 0 0% 98%;
 
-    /* Warm beige secondary */
-    --secondary: 30 25% 90%;
-    --secondary-foreground: 25 30% 20%;
+    /* Light gray secondary */
+    --secondary: 0 0% 95%;
+    --secondary-foreground: 0 0% 15%;
 
-    --muted: 30 20% 94%;
-    --muted-foreground: 25 15% 50%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    /* Terracotta/clay accent */
-    --accent: 20 45% 55%;
-    --accent-foreground: 30 20% 98%;
+    /* Soft terracotta accent */
+    --accent: 15 55% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 210 40% 98%;
 
-    --border: 30 15% 85%;
-    --input: 30 15% 85%;
-    --ring: 20 45% 55%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 15 55% 60%;
 
     --radius: 0.5rem;
 
-    /* Custom gradients - warm earth tones */
-    --gradient-dark: linear-gradient(135deg, hsl(25 35% 18%) 0%, hsl(25 30% 28%) 100%);
-    --gradient-light: linear-gradient(180deg, hsl(30 25% 94%) 0%, hsl(30 20% 98%) 100%);
-    --gradient-hero: linear-gradient(135deg, hsl(25 35% 20%) 0%, hsl(25 30% 30%) 50%, hsl(20 25% 35%) 100%);
-    --gradient-card: linear-gradient(145deg, hsl(30 20% 98%) 0%, hsl(30 15% 95%) 100%);
-    --gradient-accent: linear-gradient(135deg, hsl(20 45% 50%) 0%, hsl(20 50% 60%) 100%);
+    /* Custom gradients - lighter with subtle warmth */
+    --gradient-dark: linear-gradient(135deg, hsl(0 0% 15%) 0%, hsl(0 0% 25%) 100%);
+    --gradient-light: linear-gradient(180deg, hsl(0 0% 98%) 0%, hsl(0 0% 100%) 100%);
+    --gradient-hero: linear-gradient(135deg, hsl(0 0% 20%) 0%, hsl(0 0% 30%) 50%, hsl(0 0% 35%) 100%);
+    --gradient-card: linear-gradient(145deg, hsl(0 0% 100%) 0%, hsl(0 0% 98%) 100%);
+    --gradient-accent: linear-gradient(135deg, hsl(15 55% 55%) 0%, hsl(15 60% 65%) 100%);
 
     /* Shadows */
-    --shadow-sm: 0 2px 8px -2px hsl(25 30% 20% / 0.08);
-    --shadow-md: 0 8px 24px -8px hsl(25 30% 20% / 0.12);
-    --shadow-lg: 0 16px 48px -12px hsl(25 30% 20% / 0.15);
-    --shadow-accent: 0 8px 24px -8px hsl(20 45% 55% / 0.25);
+    --shadow-sm: 0 2px 8px -2px hsl(0 0% 15% / 0.08);
+    --shadow-md: 0 8px 24px -8px hsl(0 0% 15% / 0.12);
+    --shadow-lg: 0 16px 48px -12px hsl(0 0% 15% / 0.15);
+    --shadow-accent: 0 8px 24px -8px hsl(15 55% 60% / 0.25);
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
@@ -143,7 +143,7 @@
   }
 
   .text-gradient {
-    background: linear-gradient(135deg, hsl(20 50% 45%) 0%, hsl(20 60% 60%) 100%);
+    background: linear-gradient(135deg, hsl(15 60% 55%) 0%, hsl(15 65% 65%) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
