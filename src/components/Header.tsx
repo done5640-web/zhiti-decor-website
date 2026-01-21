@@ -28,6 +28,10 @@ const Header = () => {
   const handleNavigation = (href: string) => {
     navigate(href);
     setIsMobileMenuOpen(false);
+    // Scroll to top after navigation
+    setTimeout(() => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }, 100);
   };
 
   return (
@@ -37,6 +41,9 @@ const Header = () => {
       <div className="container mx-auto px-4 flex items-center justify-between">
         <Link
           to="/"
+          onClick={() => {
+            window.scrollTo({ top: 0, behavior: "smooth" });
+          }}
           className="flex items-center gap-3 hover:opacity-80 transition-opacity"
         >
           <img
@@ -55,6 +62,7 @@ const Header = () => {
             <Link
               key={link.href}
               to={link.href}
+              onClick={() => handleNavigation(link.href)}
               className="font-medium text-sm tracking-wide transition-all duration-300 text-foreground/80 hover:text-accent relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 after:bg-accent after:transition-all after:duration-300 hover:after:w-full"
             >
               {link.label}
@@ -88,7 +96,7 @@ const Header = () => {
             <Link
               key={link.href}
               to={link.href}
-              onClick={() => setIsMobileMenuOpen(false)}
+              onClick={() => handleNavigation(link.href)}
               className="text-foreground font-medium py-2 border-b border-border/50 transition-colors hover:text-accent"
             >
               {link.label}

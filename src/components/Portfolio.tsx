@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback } from "react";
-import { ChevronLeft, ChevronRight } from "lucide-react";
+import { ChevronLeft, ChevronRight, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import portfolio1 from "@/assets/411408222_1054958222368452_4468872725427950307_n.jpg";
 import portfolio2 from "@/assets/411571036_224953270642608_2208709308777537019_n.jpg";
@@ -68,6 +68,8 @@ const portfolioItems = [
 const Portfolio = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoPlaying, setIsAutoPlaying] = useState(true);
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [modalImageIndex, setModalImageIndex] = useState(0);
 
   const nextSlide = useCallback(() => {
     setCurrentIndex((prev) => (prev + 1) % portfolioItems.length);
@@ -82,6 +84,27 @@ const Portfolio = () => {
   const goToSlide = (index: number) => {
     setCurrentIndex(index);
     setIsAutoPlaying(false);
+  };
+
+  const openModal = (index: number) => {
+    setModalImageIndex(index);
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeModal = () => {
+    setIsModalOpen(false);
+    document.body.style.overflow = 'unset';
+  };
+
+  const nextModalImage = () => {
+    setModalImageIndex((prev) => (prev + 1) % portfolioItems.length);
+  };
+
+  const prevModalImage = () => {
+    setModalImageIndex(
+      (prev) => (prev - 1 + portfolioItems.length) % portfolioItems.length
+    );
   };
 
   useEffect(() => {
@@ -128,7 +151,8 @@ const Portfolio = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover cursor-pointer"
+                  onClick={() => openModal(index)}
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
@@ -180,6 +204,64 @@ const Portfolio = () => {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      {isModalOpen && (
+        <div
+          className="fixed inset-0 z-[100] bg-black/95 flex items-center justify-center p-4"
+          onClick={closeModal}
+        >
+          <button
+            onClick={closeModal}
+            className="absolute top-4 right-4 z-10 p-2 rounded-full bg-white/10 hover:bg-white/20 transition-colors"
+          >
+            <X className="w-6 h-6 text-white" />
+          </button>
+
+          <Button
+            variant="secondary"
+            size="icon"
+            className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full z-10"
+            onClick={(e) => {
+              e.stopPropagation();
+              prevModalImage();
+            }}
+          >
+            <ChevronLeft className="w-6 h-6" />
+          </Button>
+
+          <Button
+            variant="secondary"
+            size="icon"
+            className="absolute right-4 top-1/2 -translate-y-1/2 w-12 h-12 rounded-full z-10"
+            onClick={(e) => {
+              e.stopPropagation();
+              nextModalImage();
+            }}
+          >
+            <ChevronRight className="w-6 h-6" />
+          </Button>
+
+          <div
+            className="max-w-7xl max-h-[90vh] w-full"
+            onClick={(e) => e.stopPropagation()}
+          >
+            <img
+              src={portfolioItems[modalImageIndex].image}
+              alt={portfolioItems[modalImageIndex].title}
+              className="w-full h-full object-contain rounded-lg"
+            />
+            <div className="text-center mt-4">
+              <h3 className="text-white font-display text-2xl font-bold mb-2">
+                {portfolioItems[modalImageIndex].title}
+              </h3>
+              <p className="text-white/70">
+                {portfolioItems[modalImageIndex].category}
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
