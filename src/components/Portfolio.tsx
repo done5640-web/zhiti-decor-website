@@ -151,8 +151,12 @@ const Portfolio = () => {
                 <img
                   src={item.image}
                   alt={item.title}
-                  className="w-full h-full object-cover cursor-pointer"
+                  className="w-full h-full object-cover cursor-pointer touch-manipulation"
                   onClick={() => openModal(index)}
+                  onTouchEnd={(e) => {
+                    e.preventDefault();
+                    openModal(index);
+                  }}
                 />
                 {/* Overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-primary/80 via-primary/20 to-transparent" />
