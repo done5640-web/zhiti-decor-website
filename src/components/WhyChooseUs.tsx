@@ -52,7 +52,7 @@ const WhyChooseUs = () => {
   return (
     <section
       id="about"
-      className="py-24 lg:py-32 gradient-dark"
+      className="py-16 lg:py-20 gradient-dark"
       ref={sectionRef}
     >
       <div className="container mx-auto px-4">

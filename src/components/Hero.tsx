@@ -72,41 +72,6 @@ const Hero = () => {
               <ArrowRight className="w-5 h-5" />
             </Button>
           </div>
-
-          {/* Stats */}
-          <div className="grid grid-cols-3 gap-8 mt-16 pt-16 border-t border-primary-foreground/10 animate-fade-up opacity-0 stagger-4">
-            <div className="text-center">
-              <div className="font-display text-3xl sm:text-4xl font-bold text-primary-foreground mb-2">
-                10+
-              </div>
-              <div className="text-primary-foreground/60 text-sm sm:text-base">
-                Vite Përvojë
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="font-display text-3xl sm:text-4xl font-bold text-primary-foreground mb-2">
-                200+
-              </div>
-              <div className="text-primary-foreground/60 text-sm sm:text-base">
-                Projekte
-              </div>
-            </div>
-            <div className="text-center">
-              <div className="font-display text-3xl sm:text-4xl font-bold text-primary-foreground mb-2">
-                100%
-              </div>
-              <div className="text-primary-foreground/60 text-sm sm:text-base">
-                Klientë të Kënaqur
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Scroll Indicator */}
-      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce">
-        <div className="w-6 h-10 rounded-full border-2 border-primary-foreground/30 flex items-start justify-center p-2">
-          <div className="w-1.5 h-3 rounded-full bg-primary-foreground/50 animate-pulse" />
         </div>
       </div>
     </section>

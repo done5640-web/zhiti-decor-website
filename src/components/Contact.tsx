@@ -44,7 +44,7 @@ const Contact = () => {
   );
 
   return (
-    <section id="contact" className="py-24 lg:py-32 gradient-light">
+    <section id="contact" className="py-16 lg:py-20 gradient-light">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

@@ -1,37 +1,67 @@
 import { useState, useEffect, useCallback } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import portfolio1 from "@/assets/portfolio-1.jpg";
-import portfolio2 from "@/assets/portfolio-2.jpg";
-import portfolio3 from "@/assets/portfolio-3.jpg";
-import portfolio4 from "@/assets/portfolio-4.jpg";
-import portfolio5 from "@/assets/portfolio-5.jpg";
+import portfolio1 from "@/assets/411408222_1054958222368452_4468872725427950307_n.jpg";
+import portfolio2 from "@/assets/411571036_224953270642608_2208709308777537019_n.jpg";
+import portfolio3 from "@/assets/411857000_171148779388400_5821450382298634115_n.jpg";
+import portfolio4 from "@/assets/412186896_335766425834419_3871677165919096425_n.jpg";
+import portfolio5 from "@/assets/418667374_2750479608432333_1715209089758997271_n.jpg";
+import portfolio6 from "@/assets/418997094_263907983384788_6158233903786652649_n.jpg";
+import portfolio7 from "@/assets/430315189_1061064278532645_1954259242241019420_n.jpg";
+import portfolio8 from "@/assets/464627173_558052510241321_6731253810547605589_n.jpg";
+import portfolio9 from "@/assets/464738685_571285305409183_4217127311339833561_n.jpg";
+import portfolio10 from "@/assets/464765487_586656400704827_1767808734328167923_n.jpg";
 
 const portfolioItems = [
   {
     image: portfolio1,
-    title: "Apartament Modern",
-    category: "Punime Gipsi & Lyerje",
+    title: "Punë Profesionale",
+    category: "Ndërtim & Dekorim",
   },
   {
     image: portfolio2,
-    title: "Vilë Luksoze",
-    category: "Sistem Kapot",
-  },
-  {
-    image: portfolio3,
-    title: "Zyrë Biznesi",
-    category: "Tavane të Varura",
-  },
-  {
-    image: portfolio4,
-    title: "Restorant Elegant",
+    title: "Projekt i Përfunduar",
     category: "Punime Dekorative",
   },
   {
+    image: portfolio3,
+    title: "Dekorim Modern",
+    category: "Dizajn Interior",
+  },
+  {
+    image: portfolio4,
+    title: "Renovim Komplet",
+    category: "Ndërtim",
+  },
+  {
     image: portfolio5,
-    title: "Shtëpi Private",
-    category: "Renovim Komplet",
+    title: "Punime Cilësore",
+    category: "Sistem Kapot",
+  },
+  {
+    image: portfolio6,
+    title: "Stil Bashkëkohor",
+    category: "Dekorim",
+  },
+  {
+    image: portfolio7,
+    title: "Hapësirë Elegante",
+    category: "Punime Gipsi",
+  },
+  {
+    image: portfolio8,
+    title: "Dizajn i Sofistikuar",
+    category: "Interior",
+  },
+  {
+    image: portfolio9,
+    title: "Ambient Modern",
+    category: "Dekorim",
+  },
+  {
+    image: portfolio10,
+    title: "Punë e Detajuar",
+    category: "Finishing",
   },
 ];
 
@@ -62,7 +92,7 @@ const Portfolio = () => {
   }, [isAutoPlaying, nextSlide]);
 
   return (
-    <section id="portfolio" className="py-24 lg:py-32 bg-background">
+    <section id="portfolio" className="py-16 lg:py-20 bg-background">
       <div className="container mx-auto px-4">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">

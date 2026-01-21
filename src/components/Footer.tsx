@@ -1,14 +1,8 @@
-import { Phone, Mail, MapPin } from "lucide-react";
+import { Phone, Mail, MapPin, Instagram } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
-
-  const scrollToSection = (href: string) => {
-    const element = document.querySelector(href);
-    if (element) {
-      element.scrollIntoView({ behavior: "smooth" });
-    }
-  };
 
   return (
     <footer className="gradient-dark pt-16 pb-8">
@@ -16,18 +10,14 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 pb-12 border-b border-primary-foreground/10">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <a
-              href="#home"
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("#home");
-              }}
+            <Link
+              to="/"
               className="inline-block mb-4"
             >
               <span className="font-display text-2xl font-bold text-primary-foreground">
                 Zhiti<span className="text-gradient">Decor</span>
               </span>
-            </a>
+            </Link>
             <p className="text-primary-foreground/60 leading-relaxed max-w-md mb-6">
               Zgjidhje profesionale në ndërtim dhe dekorim. Transformojmë
               hapësirat tuaja me cilësi të lartë dhe përvojë profesionale.
@@ -45,6 +35,14 @@ const Footer = () => {
               >
                 <Mail className="w-4 h-4" />
               </a>
+              <a
+                href="https://www.instagram.com/zhiti_decor/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-full bg-primary-foreground/10 flex items-center justify-center text-primary-foreground/60 hover:bg-accent hover:text-accent-foreground transition-all duration-300"
+              >
+                <Instagram className="w-4 h-4" />
+              </a>
             </div>
           </div>
 
@@ -55,23 +53,19 @@ const Footer = () => {
             </h4>
             <nav className="flex flex-col gap-3">
               {[
-                { href: "#home", label: "Ballina" },
-                { href: "#services", label: "Shërbimet" },
-                { href: "#portfolio", label: "Punimet" },
-                { href: "#about", label: "Rreth Nesh" },
-                { href: "#contact", label: "Kontakt" },
+                { href: "/kreu", label: "Kreu" },
+                { href: "/sherbimet", label: "Shërbimet" },
+                { href: "/punimet", label: "Punimet" },
+                { href: "/rreth-nesh", label: "Rreth Nesh" },
+                { href: "/kontakt", label: "Kontakt" },
               ].map((link) => (
-                <a
+                <Link
                   key={link.href}
-                  href={link.href}
-                  onClick={(e) => {
-                    e.preventDefault();
-                    scrollToSection(link.href);
-                  }}
+                  to={link.href}
                   className="text-primary-foreground/60 hover:text-accent transition-colors duration-300"
                 >
                   {link.label}
-                </a>
+                </Link>
               ))}
             </nav>
           </div>
